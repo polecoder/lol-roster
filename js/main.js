@@ -60,7 +60,6 @@ async function fetchAndDisplayChampions() {
       const results = await Promise.all(fetchPromises);
       // Guardo todos los valores de los fetch en un array usando el operador "spread"
       allChampions.push(...results);
-      console.log(allChampions);
       allAssassins = allChampions.filter(champion => champion.tags[0] == 'Assassin');
       allFighters = allChampions.filter(champion => champion.tags[0] == 'Fighter');
       allMages = allChampions.filter(champion => champion.tags[0] == 'Mage');
@@ -79,19 +78,6 @@ async function fetchAndDisplayChampions() {
 }
 
 const championsGrid = document.getElementById('championsGrid');
-
-// function displayChampions(role) {
-//   
-
-//   console.log(championsParaCargar, role);
-//   championsParaCargar.forEach(champion => );
-
-//   indiceActual += CHAMPIONS_PER_PAGE;
-//   if (indiceActual >= allChampions.length) {
-//     document.getElementById('loadMore').classList.add('hidden');
-//   }
-// }
-
 function displayChampion(champion) {
   const TAG = champion.tags[0];
   const SPANISH_TAG = TAG === 'Fighter' ? 'Luchador':
@@ -110,7 +96,7 @@ function displayChampion(champion) {
   const E_PATH = champion.spells[2].image.full;
   const R_PATH = champion.spells[3].image.full;
   const div = document.createElement('div');
-  div.classList.add('w-[272px]', 'bg-custom-blue-1', 'text-white', 'text-center', 'relative', 'pb-2', 'hover:scale-105', 'transition-all', 'duration-200', 'animate-fade');
+  div.classList.add('w-[272px]', 'bg-custom-blue-1', 'text-white', 'text-center', 'relative', 'pb-2', 'hover:scale-105', 'transition-all', 'duration-200', 'animate-fade', 'mx-auto');
   div.innerHTML = `
     <div class="w-full h-full bg-transparent absolute scale-x-112 scale-y-105">
       <div class="w-[28px] h-[28px] bg-white absolute top-0 right-0 rotate-45"></div>
@@ -201,7 +187,6 @@ document.getElementById('loadMore').addEventListener('click', () => {
     displayChampion(championsParaCargar[indiceActual + i]);
   }
   indiceActual += CHAMPIONS_PER_PAGE;
-  console.log("indiceActual: ", indiceActual, "championsParaCargar.length: ", championsParaCargar.length)
   if (indiceActual >= championsParaCargar.length) {
     document.getElementById('loadMore').classList.add('hidden');
   }
