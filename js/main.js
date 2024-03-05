@@ -79,13 +79,13 @@ async function fetchAndDisplayChampions() {
 
 const championsGrid = document.getElementById('championsGrid');
 function displayChampion(champion) {
-  const TAG = champion.tags[0];
-  const SPANISH_TAG = TAG === 'Fighter' ? 'Luchador':
-                      TAG === 'Tank' ? 'Tanque':
-                      TAG === 'Mage' ? 'Mago':
-                      TAG === 'Assassin' ? 'Asesino':
-                      TAG === 'Support' ? 'Soporte':
-                      TAG === 'Marksman' ? 'Tirador':
+  const TAG = champion.tags[0].toLowerCase();
+  const SPANISH_TAG = TAG === 'fighter' ? 'Luchador':
+                      TAG === 'tank' ? 'Tanque':
+                      TAG === 'mage' ? 'Mago':
+                      TAG === 'assassin' ? 'Asesino':
+                      TAG === 'support' ? 'Soporte':
+                      TAG === 'marksman' ? 'Tirador':
                       'Desconocido';
   const DIFFICULTY_ARRAY = champion.info.difficulty <= 3 ? ["opacity-25", "opacity-25"]:
                            champion.info.difficulty <= 6  ? ["", "opacity-25"]:
