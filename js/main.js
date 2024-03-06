@@ -102,7 +102,7 @@ function displayChampion(champion) {
       <div class="w-[28px] h-[28px] bg-white absolute top-0 right-0 rotate-45"></div>
     </div>
     <div class="relative w-60 m-auto mt-4 mb-1">
-      <img src="${SPLASH_URL}${champion.id}_0.jpg" alt="${champion.name} splash art">
+      <img src="${SPLASH_URL}${champion.id}_0.jpg" loading="lazy" width="240" height="436" alt="${champion.name} splash art">
       <div class="bg-black bg-opacity-50 h-20 w-60 absolute z-10 bottom-0"></div>
       <div class="text-custom-gold-1">
         <h3 class="absolute z-20 bottom-10 w-60 uppercase font-custom-title italic font-semibold text-2xl">${champion.name}</h3>
@@ -114,27 +114,27 @@ function displayChampion(champion) {
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">P</p>
           <div class="w-full h-full absolute scale-112 border-white border-1"></div>
-          <img src="${PASSIVE_URL}${PASSIVE_PATH}" alt="${champion.name} passive" class="w-9">
+          <img src="${PASSIVE_URL}${PASSIVE_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} passive" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">Q</p>
           <div class="w-full h-full absolute scale-112 border-white border-1"></div>
-          <img src="${ABILITY_URL}${Q_PATH}" alt="${champion.name} Q" class="w-9">
+          <img src="${ABILITY_URL}${Q_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} Q" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">W</p>
           <div class="w-full h-full absolute scale-112 border-white border-1"></div>
-          <img src="${ABILITY_URL}${W_PATH}" alt="${champion.name} W" class="w-9">
+          <img src="${ABILITY_URL}${W_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} W" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">E</p>
           <div class="w-full h-full absolute scale-112 border-white border-1"></div>
-          <img src="${ABILITY_URL}${E_PATH}" alt="${champion.name} E" class="w-9">
+          <img src="${ABILITY_URL}${E_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} E" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">R</p>
           <div class="w-full h-full absolute scale-112 border-white border-1"></div>
-          <img src="${ABILITY_URL}${R_PATH}" alt="${champion.name} R" class="w-9">
+          <img src="${ABILITY_URL}${R_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} R" class="w-9">
         </div>
       </div>
       <p>Habilidades</p>
