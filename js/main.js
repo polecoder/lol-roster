@@ -102,7 +102,7 @@ function displayChampion(champion) {
       <div class="w-[28px] h-[28px] bg-white absolute top-0 right-0 rotate-45"></div>
     </div>
     <div class="relative w-60 m-auto mt-4 mb-1">
-      <img src="${SPLASH_URL}${champion.id}_0.jpg" loading="lazy" width="240" height="436" alt="${champion.name} splash art">
+      <img src="${SPLASH_URL}${champion.id}_0.jpg" width="240" height="436" alt="${champion.name} splash art">
       <div class="bg-black bg-opacity-50 h-20 w-60 absolute z-10 bottom-0"></div>
       <div class="text-custom-gold-1">
         <h3 class="absolute z-20 bottom-10 w-60 uppercase font-custom-title italic font-semibold text-2xl">${champion.name}</h3>
@@ -141,7 +141,7 @@ function displayChampion(champion) {
     </div>
     <div class="flex gap-4 p-2 uppercase text-xs tracking-wider justify-between">
       <div class="w-1/2">
-        <img src="./img/${TAG}.webp" alt="${SPANISH_TAG} icon" class="w-8 mx-auto mb-1">
+        <img src="./img/${TAG}.webp" alt="${SPANISH_TAG} icon" width="32" height="32" class="w-8 mx-auto mb-1">
         <p>${SPANISH_TAG}</p>
       </div>
       <div class="w-1/2">
