@@ -98,7 +98,7 @@ function displayChampion(champion) {
   const div = document.createElement('div');
   div.classList.add('w-[272px]', 'bg-custom-blue-1', 'text-white', 'text-center', 'relative', 'pb-2', 'hover:scale-105', 'transition-all', 'duration-200', 'animate-fade', 'mx-auto');
   div.innerHTML = `
-    <div class="w-full h-full bg-transparent absolute scale-x-112 scale-y-105">
+    <div class="w-full h-full bg-transparent absolute scale-x-[112%] scale-y-105">
       <div class="w-[28px] h-[28px] bg-white absolute top-0 right-0 rotate-45"></div>
     </div>
     <div class="relative w-60 m-auto mt-4 mb-1">
@@ -113,27 +113,27 @@ function displayChampion(champion) {
       <div class="pt-4 pb-3 px-1 flex justify-between font-custom-title">
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">P</p>
-          <div class="w-full h-full absolute scale-112 border-white border-1"></div>
+          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
           <img src="${PASSIVE_URL}${PASSIVE_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} passive" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">Q</p>
-          <div class="w-full h-full absolute scale-112 border-white border-1"></div>
+          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
           <img src="${ABILITY_URL}${Q_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} Q" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">W</p>
-          <div class="w-full h-full absolute scale-112 border-white border-1"></div>
+          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
           <img src="${ABILITY_URL}${W_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} W" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">E</p>
-          <div class="w-full h-full absolute scale-112 border-white border-1"></div>
+          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
           <img src="${ABILITY_URL}${E_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} E" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-200">
           <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">R</p>
-          <div class="w-full h-full absolute scale-112 border-white border-1"></div>
+          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
           <img src="${ABILITY_URL}${R_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} R" class="w-9">
         </div>
       </div>
@@ -146,9 +146,9 @@ function displayChampion(champion) {
       </div>
       <div class="w-1/2">
         <div class="w-16 h-8 mx-auto mb-1 flex gap-1">
-          <div class="w-5 h-3 my-auto -skew-x-40 bg-custom-blue-2"></div>
-          <div class="w-5 h-3 my-auto -skew-x-40 bg-custom-blue-2 ${DIFFICULTY_ARRAY[0]}"></div>
-          <div class="w-5 h-3 my-auto -skew-x-40 bg-custom-blue-2 ${DIFFICULTY_ARRAY[1]}"></div>
+          <div class="w-5 h-3 my-auto -skew-x-[40deg] bg-custom-blue-2"></div>
+          <div class="w-5 h-3 my-auto -skew-x-[40deg] bg-custom-blue-2 ${DIFFICULTY_ARRAY[0]}"></div>
+          <div class="w-5 h-3 my-auto -skew-x-[40deg] bg-custom-blue-2 ${DIFFICULTY_ARRAY[1]}"></div>
         </div>
         <p>Dificultad</p>
       </div>
