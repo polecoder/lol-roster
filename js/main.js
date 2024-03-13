@@ -96,13 +96,12 @@ function displayChampion(champion) {
   const E_PATH = champion.spells[2].image.full;
   const R_PATH = champion.spells[3].image.full;
   const div = document.createElement('div');
-  div.classList.add('w-[272px]', 'bg-custom-blue-1', 'text-white', 'text-center', 'relative', 'pb-2', 'hover:scale-105', 'transition-all', 'duration-200', 'animate-fade', 'mx-auto');
+  div.classList.add('w-[272px]', 'bg-custom-blue-1', 'text-white', 'text-center', 'relative', 'pb-2', 'transition-all', 'group', 'duration-200', 'animate-fade', 'mx-auto', 'before:absolute', 'before:w-[28px]', 'before:h-[28px]', 'before:bg-white', 'before:-top-[14px]', 'before:-right-[14px]', 'before:rotate-[45deg]', 'before:hover:translate-x-3', 'before:hover:-translate-y-3', 'before:transition-all', 'before:duration-500');
   div.innerHTML = `
-    <div class="w-full h-full bg-transparent absolute scale-x-[112%] scale-y-105">
-      <div class="w-[28px] h-[28px] bg-white absolute top-0 right-0 rotate-45"></div>
-    </div>
     <div class="relative w-60 m-auto mt-4 mb-1">
-      <img src="${SPLASH_URL}${champion.id}_0.jpg" width="240" height="436" alt="${champion.name} splash art">
+      <div class="overflow-hidden">
+        <img src="${SPLASH_URL}${champion.id}_0.jpg" width="240" height="436" class="scale-105 group-hover:scale-[115%] -z-10 transition-all duration-300" alt="${champion.name} splash art">
+      </div>
       <div class="bg-black bg-opacity-50 h-20 w-60 absolute z-10 bottom-0"></div>
       <div class="text-custom-gold-1">
         <h3 class="absolute z-20 bottom-10 w-60 uppercase font-custom-title italic font-semibold text-2xl">${champion.name}</h3>
@@ -111,29 +110,19 @@ function displayChampion(champion) {
     </div>
     <div class="uppercase text-xs tracking-wider pb-2 px-5">
       <div class="pt-4 pb-3 px-1 flex justify-between font-custom-title">
-        <div class="relative group hover:-translate-y-1 transition-all duration-200">
-          <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">P</p>
-          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['P'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
           <img src="${PASSIVE_URL}${PASSIVE_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} passive" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-200">
-          <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">Q</p>
-          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['Q'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
           <img src="${ABILITY_URL}${Q_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} Q" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-200">
-          <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">W</p>
-          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['W'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
           <img src="${ABILITY_URL}${W_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} W" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-200">
-          <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">E</p>
-          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['E'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
           <img src="${ABILITY_URL}${E_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} E" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-200">
-          <p class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-15 select-none group-hover:opacity-100 transition-all duration-200">R</p>
-          <div class="w-full h-full absolute scale-[112%] border-white border-[1px]"></div>
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['R'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
           <img src="${ABILITY_URL}${R_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} R" class="w-9">
         </div>
       </div>
