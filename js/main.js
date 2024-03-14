@@ -99,7 +99,8 @@ function displayChampion(champion) {
   div.classList.add('w-[272px]', 'bg-custom-blue-1', 'text-white', 'text-center', 'relative', 'pb-2', 'transition-all', 'group', 'duration-200', 'animate-fade', 'mx-auto', 'before:absolute', 'before:w-[28px]', 'before:h-[28px]', 'before:bg-white', 'before:-top-[14px]', 'before:-right-[14px]', 'before:rotate-[45deg]', 'before:hover:translate-x-3', 'before:hover:-translate-y-3', 'before:transition-all', 'before:duration-500');
   div.innerHTML = `
     <div class="relative w-60 m-auto mt-4 mb-1">
-      <div class="overflow-hidden">
+      <div class="overflow-hidden relative">
+        <img src="./img/loading.svg" width="40" height="40" class="animate-spin absolute top-[198px] left-[100px]" alt="Loading svg">
         <img src="${SPLASH_URL}${champion.id}_0.jpg" width="240" height="436" class="scale-105 group-hover:scale-[115%] -z-10 transition-all duration-300" alt="${champion.name} splash art">
       </div>
       <div class="bg-black bg-opacity-50 h-20 w-60 absolute z-10 bottom-0"></div>
@@ -110,19 +111,24 @@ function displayChampion(champion) {
     </div>
     <div class="uppercase text-xs tracking-wider pb-2 px-5">
       <div class="pt-4 pb-3 px-1 flex justify-between font-custom-title">
-        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['P'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['P'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
+          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${PASSIVE_URL}${PASSIVE_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} passive" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['Q'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['Q'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
+          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${Q_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} Q" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['W'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['W'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
+          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${W_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} W" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['E'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['E'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
+          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${E_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} E" class="w-9">
         </div>
-        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['R'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:scale-[112%] after:border-white after:border-[1px]">
+        <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['R'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
+          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${R_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} R" class="w-9">
         </div>
       </div>
