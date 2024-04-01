@@ -49,23 +49,37 @@ let indiceActual = 0;
 async function fetchAndDisplayChampions() {
   if (allChampions.length === 0) {
     // Convierto el array de IDs en un array de promesas que se resuelven con el fetch de cada campeón
-    const fetchPromises = CHAMPION_IDS.map(championID => {
-      return fetch(`${CHAMPION_URL}/${championID}.json`)
-        .then(response => response.json())
-        .then(data => data.data[championID]);
-    });
+    const storedChampionsData = localStorage.getItem('championsData');
+    let fetchPromises;
+    if (storedChampionsData) {
+      const results = JSON.parse(storedChampionsData);
+      allChampions.push(...results);
+    } else {
+      fetchPromises = CHAMPION_IDS.map(championID => {
+        return fetch(`${CHAMPION_URL}/${championID}.json`)
+          .then(response => response.json())
+          .then(data => data.data[championID]);
+      });
+      console.log(fetchPromises);
+    }
 
     try {
-      // Espero a que todas las promesas se resuelvan, guardando los resultados (results[i] será el fetch de un campeón) en un array
-      const results = await Promise.all(fetchPromises);
-      // Guardo todos los valores de los fetch en un array usando el operador "spread"
-      allChampions.push(...results);
+      if (fetchPromises) {
+        // Espero a que todas las promesas se resuelvan, guardando los resultados (results[i] será el fetch de un campeón) en un array
+        const results = await Promise.all(fetchPromises);
+        // Guardo todos los valores de los fetch en un array usando el operador "spread", además los guardo en el localStorage
+        allChampions.push(...results);
+        localStorage.setItem('championsData', JSON.stringify(allChampions));
+      }
+      
+      // Guardo los campeones en un array para cada rol, en este punto allChampions siempre está lleno, ya sea con localStorage o un fetch
       allAssassins = allChampions.filter(champion => champion.tags[0] == 'Assassin');
       allFighters = allChampions.filter(champion => champion.tags[0] == 'Fighter');
       allMages = allChampions.filter(champion => champion.tags[0] == 'Mage');
       allMarksmans = allChampions.filter(champion => champion.tags[0] == 'Marksman');
       allSupports = allChampions.filter(champion => champion.tags[0] == 'Support');
       allTanks = allChampions.filter(champion => champion.tags[0] == 'Tank');
+      
       // Carga los primeros campeones en la página
       for (let i = 0; i < CHAMPIONS_PER_PAGE; i++) {
         displayChampion(allChampions[indiceActual + i]);
@@ -112,23 +126,18 @@ function displayChampion(champion) {
     <div class="uppercase text-xs tracking-wider pb-2 px-5">
       <div class="pt-4 pb-3 px-1 flex justify-between font-custom-title">
         <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['P'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
-          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${PASSIVE_URL}${PASSIVE_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} passive" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['Q'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
-          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${Q_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} Q" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['W'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
-          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${W_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} W" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['E'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
-          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${E_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} E" class="w-9">
         </div>
         <div class="relative group hover:-translate-y-1 transition-all duration-300 before:content-['R'] before:absolute before:left-0 before:w-full before:h-full before:leading-[36px] before:opacity-15 before:hover:opacity-100 before:transition-all before:duration-300 after:absolute after:top-0 after:left-0 after:w-[36px] after:h-[36px] after:scale-[112%] after:border-white after:border-[1px]">
-          <img src="./img/loading.svg" width="20" height="20" class="animate-spin absolute top-[8px] left-[8px] -z-10" alt="Loading svg">
           <img src="${ABILITY_URL}${R_PATH}" loading="lazy" width="40" height="40" alt="${champion.name} R" class="w-9">
         </div>
       </div>
@@ -151,7 +160,6 @@ function displayChampion(champion) {
     `;
   championsGrid.appendChild(div);
 }
-
 
 let championsParaCargar = allChampions;
 const roleButtons = document.querySelectorAll('.role-btn');
@@ -176,7 +184,8 @@ roleButtons.forEach(button => button.addEventListener('click', () => {
   button.classList.add('role-active');
 }));
 
-document.addEventListener('DOMContentLoaded', fetchAndDisplayChampions);
+fetchAndDisplayChampions();
+/* document.addEventListener('DOMContentLoaded', fetchAndDisplayChampions); */
 document.getElementById('loadMore').addEventListener('click', () => {
   for (let i = 0; ((indiceActual + i) < championsParaCargar.length) && (i < CHAMPIONS_PER_PAGE); i++) {
     displayChampion(championsParaCargar[indiceActual + i]);
