@@ -251,6 +251,9 @@ async function fetchAndDisplayChampions() {
 
 const championsGrid = document.getElementById("championsGrid");
 function displayChampion(champion) {
+  /***************/
+  /* DATA DRAGON */
+  /***************/
   const TAG = champion.tags[0].toLowerCase();
   const SPANISH_TAG =
     TAG === "fighter"
@@ -277,6 +280,34 @@ function displayChampion(champion) {
   const W_PATH = champion.spells[1].image.full;
   const E_PATH = champion.spells[2].image.full;
   const R_PATH = champion.spells[3].image.full;
+  const ALL_PATHS = [
+    `${SPLASH_URL}${champion.id}_0.jpg`,
+    `${PASSIVE_URL}${PASSIVE_PATH}`,
+    `${ABILITY_URL}${Q_PATH}`,
+    `${ABILITY_URL}${W_PATH}`,
+    `${ABILITY_URL}${E_PATH}`,
+    `${ABILITY_URL}${R_PATH}`,
+  ];
+
+  /**************/
+  /* CLOUDINARY */
+  /**************/
+  const CLOUDINARY_URL = "https://res.cloudinary.com";
+  const CLOUD_NAME = "dak46kbmg";
+  const SPLASH_TRANSFORMATIONS = "w_240,h_436,c_auto,f_webp";
+  const ABILITY_TRANSFORMATIONS = "w_40,h_40,c_auto,f_webp";
+  const IMAGE_URLS = [
+    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${SPLASH_TRANSFORMATIONS}/${ALL_PATHS[0]}`,
+    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[1]}`,
+    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[2]}`,
+    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[3]}`,
+    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[4]}`,
+    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[5]}`,
+  ];
+
+  /***********************/
+  /* ADDING CARD TO HTML */
+  /***********************/
   const div = document.createElement("div");
   div.classList.add(
     "w-[272px]",
@@ -313,7 +344,7 @@ function displayChampion(champion) {
           alt="Loading svg"
         />
         <img
-          src="${SPLASH_URL}${champion.id}_0.jpg"
+          src="${IMAGE_URLS[0]}"
           width="240"
           height="436"
           class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
@@ -341,7 +372,7 @@ function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['P'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${PASSIVE_URL}${PASSIVE_PATH}"
+            src="${IMAGE_URLS[1]}"
             loading="lazy"
             width="40"
             height="40"
@@ -354,7 +385,7 @@ function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['Q'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${ABILITY_URL}${Q_PATH}"
+            src="${IMAGE_URLS[2]}"
             loading="lazy"
             width="40"
             height="40"
@@ -367,7 +398,7 @@ function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['W'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${ABILITY_URL}${W_PATH}"
+            src="${IMAGE_URLS[3]}"
             loading="lazy"
             width="40"
             height="40"
@@ -380,7 +411,7 @@ function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['E'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${ABILITY_URL}${E_PATH}"
+            src="${IMAGE_URLS[4]}"
             loading="lazy"
             width="40"
             height="40"
@@ -393,7 +424,7 @@ function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['R'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${ABILITY_URL}${R_PATH}"
+            src="${IMAGE_URLS[5]}"
             loading="lazy"
             width="40"
             height="40"
