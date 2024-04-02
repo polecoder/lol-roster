@@ -46,6 +46,7 @@ let allMarksmans = [];
 let allSupports = [];
 let allTanks = [];
 let indiceActual = 0;
+
 async function fetchAndDisplayChampions() {
   if (allChampions.length === 0) {
     // Convierto el array de IDs en un array de promesas que se resuelven con el fetch de cada campeón
@@ -79,7 +80,7 @@ async function fetchAndDisplayChampions() {
       allMarksmans = allChampions.filter(champion => champion.tags[0] == 'Marksman');
       allSupports = allChampions.filter(champion => champion.tags[0] == 'Support');
       allTanks = allChampions.filter(champion => champion.tags[0] == 'Tank');
-      
+
       // Carga los primeros campeones en la página
       for (let i = 0; i < CHAMPIONS_PER_PAGE; i++) {
         displayChampion(allChampions[indiceActual + i]);
@@ -119,7 +120,7 @@ function displayChampion(champion) {
       </div>
       <div class="bg-black bg-opacity-50 h-20 w-60 absolute z-10 bottom-0"></div>
       <div class="text-custom-gold-1">
-        <h3 class="absolute z-20 bottom-10 w-60 uppercase font-custom-title italic font-semibold text-2xl">${champion.name}</h3>
+        <h2 class="absolute z-20 bottom-10 w-60 uppercase font-custom-title italic font-semibold text-2xl">${champion.name}</h2>
         <p class="absolute z-20 bottom-3 w-60 uppercase font-custom-title italic text-xs">${champion.title}</p>
       </div>
     </div>
@@ -185,7 +186,6 @@ roleButtons.forEach(button => button.addEventListener('click', () => {
 }));
 
 fetchAndDisplayChampions();
-/* document.addEventListener('DOMContentLoaded', fetchAndDisplayChampions); */
 document.getElementById('loadMore').addEventListener('click', () => {
   for (let i = 0; ((indiceActual + i) < championsParaCargar.length) && (i < CHAMPIONS_PER_PAGE); i++) {
     displayChampion(championsParaCargar[indiceActual + i]);
