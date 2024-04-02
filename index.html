@@ -4,8 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LoL roster by Polecoder</title>
-    <link rel="stylesheet" href="./css/output.css" />
     <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
+    <link
+      rel="preconnect"
+      href="https://ddragon.leagueoflegends.com"
+      crossorigin
+    />
+    <script defer src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <meta
       name="description"
       content="LoL Roster es una aplicación web que muestra una lista de campeones del juego League of Legends. Puedes filtrar los campeones por roles como asesino, tanque, etc."
@@ -117,6 +133,7 @@
               height="436"
               class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
               alt="Aatrox splash art"
+              fetchpriority="high"
             />
           </div>
           <div
@@ -147,6 +164,7 @@
                 height="40"
                 alt="Aatrox passive"
                 class="w-9"
+                fetchpriority="low"
               />
             </div>
             <div
@@ -159,6 +177,7 @@
                 height="40"
                 alt="Aatrox Q"
                 class="w-9"
+                fetchpriority="low"
               />
             </div>
             <div
@@ -171,6 +190,7 @@
                 height="40"
                 alt="Aatrox W"
                 class="w-9"
+                fetchpriority="low"
               />
             </div>
             <div
@@ -183,6 +203,7 @@
                 height="40"
                 alt="Aatrox E"
                 class="w-9"
+                fetchpriority="low"
               />
             </div>
             <div
@@ -195,6 +216,7 @@
                 height="40"
                 alt="Aatrox R"
                 class="w-9"
+                fetchpriority="low"
               />
             </div>
           </div>
@@ -246,7 +268,5 @@
         </p>
       </div>
     </footer>
-
-    <script src="./js/main.js"></script>
   </body>
 </html>

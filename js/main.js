@@ -318,6 +318,7 @@ function displayChampion(champion) {
           height="436"
           class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
           alt="${champion.name} splash art"
+          fetchpriority="high"
         />
       </div>
       <div class="absolute bottom-0 z-10 h-20 w-60 bg-black bg-opacity-50"></div>
@@ -346,6 +347,7 @@ function displayChampion(champion) {
             height="40"
             alt="${champion.name} passive"
             class="w-9"
+            fetchpriority="low"
           />
         </div>
         <div
@@ -358,6 +360,7 @@ function displayChampion(champion) {
             height="40"
             alt="${champion.name} Q"
             class="w-9"
+            fetchpriority="low"
           />
         </div>
         <div
@@ -370,6 +373,7 @@ function displayChampion(champion) {
             height="40"
             alt="${champion.name} W"
             class="w-9"
+            fetchpriority="low"
           />
         </div>
         <div
@@ -382,6 +386,7 @@ function displayChampion(champion) {
             height="40"
             alt="${champion.name} E"
             class="w-9"
+            fetchpriority="low"
           />
         </div>
         <div
@@ -394,6 +399,7 @@ function displayChampion(champion) {
             height="40"
             alt="${champion.name} R"
             class="w-9"
+            fetchpriority="low"
           />
         </div>
       </div>
