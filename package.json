@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Explora el vasto universo de los campeones de League of Legends (LoL) con nuestra aplicación web interactiva. Impulsado por la API Data Dragon de Riot, este proyecto proporciona información detallada sobre cada campeón de LoL, incluyendo sus roles, habilidades y mucho más. Construido como un viaje de aprendizaje a través de Tailwind CSS, esta aplicación muestra un diseño moderno y responsive que mejora la experiencia del usuario.",
   "scripts": {
+    "tailwind-build": "tailwindcss -i ./css/input.css -o ./css/output.css",
     "minify-css": "cleancss -o ./css/output.min.css ./css/output.css",
     "uglify-js": "terser ./js/main.js -o ./js/main.min.js -c -m",
-    "build": "npm run minify-css && npm run uglify-js"
+    "prep": "npm run tailwind-build && npm run minify-css && npm run uglify-js"
   },
   "repository": {
     "type": "git",
