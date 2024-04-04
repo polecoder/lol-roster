@@ -10,8 +10,8 @@
       href="https://ddragon.leagueoflegends.com"
       crossorigin
     />
-    <script defer src="./js/main.js"></script>
-    <link rel="stylesheet" href="./css/output.css" />
+    <script defer src="./js/main.min.js"></script>
+    <link rel="stylesheet" href="./css/output.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400&display=swap"
       rel="stylesheet"
     />
     <meta
@@ -114,144 +114,7 @@
     <main
       id="championsGrid"
       class="m-auto flex max-w-7xl flex-col gap-x-4 gap-y-12 px-4 py-16 sm:grid sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
-    >
-      <!-- <div
-        class="group relative mx-auto w-[272px] animate-fade bg-custom-blue-1 pb-2 text-center text-white transition-all duration-200 before:absolute before:-right-[14px] before:-top-[14px] before:h-[28px] before:w-[28px] before:rotate-[45deg] before:bg-white before:transition-all before:duration-500 before:hover:-translate-y-3 before:hover:translate-x-3"
-      >
-        <div class="relative m-auto mb-1 mt-4 w-60">
-          <div class="relative overflow-hidden">
-            <img
-              src="./img/loading.svg"
-              width="40"
-              height="40"
-              class="absolute left-[100px] top-[198px] animate-spin"
-              alt="Loading svg"
-            />
-            <img
-              src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
-              width="240"
-              height="436"
-              class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
-              alt="Aatrox splash art"
-              fetchpriority="high"
-            />
-          </div>
-          <div
-            class="absolute bottom-0 z-10 h-20 w-60 bg-black bg-opacity-50"
-          ></div>
-          <div class="text-custom-gold-1">
-            <h2
-              class="absolute bottom-10 z-20 w-60 font-custom-title text-2xl font-semibold uppercase italic"
-            >
-              Aatrox
-            </h2>
-            <p
-              class="absolute bottom-3 z-20 w-60 font-custom-title text-xs uppercase italic"
-            >
-              La espada Darkin
-            </p>
-          </div>
-        </div>
-        <div class="px-5 pb-2 text-xs uppercase tracking-wider">
-          <div class="flex justify-between px-1 pb-3 pt-4 font-custom-title">
-            <div
-              class="relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['P'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
-            >
-              <img
-                src="https://ddragon.leagueoflegends.com/cdn/14.4.1/img/passive/Aatrox_Passive.png"
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Aatrox passive"
-                class="w-9"
-                fetchpriority="low"
-              />
-            </div>
-            <div
-              class="relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['Q'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
-            >
-              <img
-                src="https://ddragon.leagueoflegends.com/cdn/14.4.1/img/spell/AatroxQ.png"
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Aatrox Q"
-                class="w-9"
-                fetchpriority="low"
-              />
-            </div>
-            <div
-              class="relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['W'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
-            >
-              <img
-                src="https://ddragon.leagueoflegends.com/cdn/14.4.1/img/spell/AatroxW.png"
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Aatrox W"
-                class="w-9"
-                fetchpriority="low"
-              />
-            </div>
-            <div
-              class="relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['E'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
-            >
-              <img
-                src="https://ddragon.leagueoflegends.com/cdn/14.4.1/img/spell/AatroxE.png"
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Aatrox E"
-                class="w-9"
-                fetchpriority="low"
-              />
-            </div>
-            <div
-              class="relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['R'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
-            >
-              <img
-                src="https://ddragon.leagueoflegends.com/cdn/14.4.1/img/spell/AatroxR.png"
-                loading="lazy"
-                width="40"
-                height="40"
-                alt="Aatrox R"
-                class="w-9"
-                fetchpriority="low"
-              />
-            </div>
-          </div>
-          <p>Habilidades</p>
-        </div>
-        <div
-          class="flex justify-between gap-4 p-2 text-xs uppercase tracking-wider"
-        >
-          <div class="w-1/2">
-            <img
-              src="./img/fighter.webp"
-              alt="Fighter icon"
-              width="32"
-              height="32"
-              class="mx-auto mb-1 w-8"
-            />
-            <p>Luchador</p>
-          </div>
-          <div class="w-1/2">
-            <div class="mx-auto mb-1 flex h-8 w-16 gap-1">
-              <div
-                class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2"
-              ></div>
-              <div
-                class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2"
-              ></div>
-              <div
-                class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2 opacity-25"
-              ></div>
-            </div>
-            <p>Dificultad</p>
-          </div>
-        </div>
-      </div> -->
-    </main>
+    ></main>
     <button
       id="loadMore"
       type="button"

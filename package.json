@@ -2,9 +2,10 @@
   "name": "lol-roster",
   "version": "1.0.0",
   "description": "Explora el vasto universo de los campeones de League of Legends (LoL) con nuestra aplicación web interactiva. Impulsado por la API Data Dragon de Riot, este proyecto proporciona información detallada sobre cada campeón de LoL, incluyendo sus roles, habilidades y mucho más. Construido como un viaje de aprendizaje a través de Tailwind CSS, esta aplicación muestra un diseño moderno y responsive que mejora la experiencia del usuario.",
-  "main": "tailwind.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "minify-css": "cleancss -o ./css/output.min.css ./css/output.css",
+    "uglify-js": "terser ./js/main.js -o ./js/main.min.js -c -m",
+    "build": "npm run minify-css && npm run uglify-js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   },
   "homepage": "https://github.com/polecoder/lol-roster#readme",
   "devDependencies": {
+    "clean-css-cli": "^5.6.3",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "terser": "^5.30.3"
   }
 }
