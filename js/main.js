@@ -1,4 +1,5 @@
 import { CHAMPION_IDS } from "./championIDs.js";
+import { transformImage } from "./transformImage.js";
 
 const PATCH_VERSION = "14.4.1";
 
@@ -114,18 +115,16 @@ function displayChampion(champion) {
   /**************/
   /* CLOUDINARY */
   /**************/
-  const CLOUDINARY_URL = "https://res.cloudinary.com";
-  const CLOUD_NAME = "dak46kbmg";
   const SPLASH_TRANSFORMATIONS = "w_240,h_436,c_auto,f_webp";
   const ABILITY_TRANSFORMATIONS = "w_40,h_40,c_auto,f_webp";
   const IMAGE_URLS = [
-    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${SPLASH_TRANSFORMATIONS}/${ALL_PATHS[0]}`,
-    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[1]}`,
-    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[2]}`,
-    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[3]}`,
-    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[4]}`,
-    `${CLOUDINARY_URL}/${CLOUD_NAME}/image/fetch/${ABILITY_TRANSFORMATIONS}/${ALL_PATHS[5]}`,
-  ];
+    transformImage(SPLASH_TRANSFORMATIONS, ALL_PATHS[0]),
+    transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[1]),
+    transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[2]),
+    transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[3]),
+    transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[4]),
+    transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[5]),
+  ]
 
   /***********************/
   /* ADDING CARD TO HTML */
