@@ -10,7 +10,7 @@
       href="https://ddragon.leagueoflegends.com"
       crossorigin
     />
-    <script defer src="./js/main.js"></script>
+    <script defer src="./js/main.js" type="module"></script>
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -129,15 +129,16 @@
           </div>
           <div class="splash-pattern relative">
             <img
-              src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
+              src="https://res.cloudinary.com/dak46kbmg/image/fetch/w_750,h_442,c_auto,f_webp/https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
               alt="Aatrox splash art"
+              id="favouriteSplash"
             />
           </div>
           <div
             class="absolute bottom-0 left-1/2 -translate-x-1/2 font-custom-title uppercase italic lg:bottom-[10px]"
           >
-            <p class="text-xs sm:text-base lg:text-xl">La Espada Darkin</p>
-            <h2 class="text-2xl font-semibold sm:text-5xl lg:text-6xl">
+            <p class="text-xs sm:text-base lg:text-xl" id="favouriteTitle">La Espada Darkin</p>
+            <h2 class="text-2xl font-semibold sm:text-5xl lg:text-6xl" id="favouriteName">
               Aatrox
             </h2>
           </div>
@@ -173,7 +174,7 @@
           </div>
           <hr class="border-white border-opacity-25 lg:hidden" />
           <p
-            class="mt-4 text-start text-sm sm:px-4 lg:border-l-[1px] lg:border-white lg:border-opacity-25 lg:py-4 lg:pl-12"
+            class="mt-4 text-start text-sm sm:px-4 lg:border-l-[1px] lg:border-white lg:border-opacity-25 lg:py-4 lg:pl-12" id="favouriteLore"
           >
             Aatrox y sus hermanos, que alguna vez fueron respetados defensores
             de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor
