@@ -10,8 +10,8 @@
       href="https://ddragon.leagueoflegends.com"
       crossorigin
     />
-    <script defer src="./js/main.min.js"></script>
-    <link rel="stylesheet" href="./css/output.min.css" />
+    <script defer src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -111,6 +111,86 @@
         </div>
       </div>
     </header>
+    <div class="mx-3 my-16 text-center">
+      <h2
+        class="mb-8 font-custom-title text-base uppercase italic text-custom-blue-1 sm:text-xl lg:text-2xl"
+      >
+        Elegí tu
+        <span class="block text-4xl font-semibold sm:text-6xl lg:text-7xl"
+          >campeón</span
+        >
+      </h2>
+      <div class="mx-auto max-w-[750px] bg-custom-blue-1 text-white">
+        <div class="relative mb-4">
+          <div
+            class="absolute right-[8px] top-[8px] z-10 bg-custom-blue-1 p-1 sm:right-[12px] sm:top-[12px]"
+          >
+            <img src="./img/star.svg" alt="Favourite" class="sm:h-8 sm:w-8" />
+          </div>
+          <div class="splash-pattern relative">
+            <img
+              src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
+              alt="Aatrox splash art"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 font-custom-title uppercase italic lg:bottom-[10px]"
+          >
+            <p class="text-xs sm:text-base lg:text-xl">La Espada Darkin</p>
+            <h2 class="text-2xl font-semibold sm:text-5xl lg:text-6xl">
+              Aatrox
+            </h2>
+          </div>
+        </div>
+        <div class="px-6 pb-8 lg:grid lg:grid-cols-2">
+          <div
+            class="mb-4 flex justify-between gap-4 border-opacity-25 p-2 text-xs uppercase tracking-wider sm:text-sm lg:m-0 lg:my-auto lg:h-fit"
+          >
+            <div class="w-1/2">
+              <img
+                src="./img/fighter.webp"
+                alt="Fighter icon"
+                width="32"
+                height="32"
+                class="mx-auto mb-1 sm:h-10 sm:w-10"
+              />
+              <p>Luchador</p>
+            </div>
+            <div class="w-1/2">
+              <div class="mx-auto mb-1 flex h-8 w-16 gap-1 sm:h-10">
+                <div
+                  class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2"
+                ></div>
+                <div
+                  class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2"
+                ></div>
+                <div
+                  class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2 opacity-25"
+                ></div>
+              </div>
+              <p>Dificultad</p>
+            </div>
+          </div>
+          <hr class="border-white border-opacity-25 lg:hidden" />
+          <p
+            class="mt-4 text-start text-sm sm:px-4 lg:border-l-[1px] lg:border-white lg:border-opacity-25 lg:py-4 lg:pl-12"
+          >
+            Aatrox y sus hermanos, que alguna vez fueron respetados defensores
+            de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor
+            para Runaterra y los derrotaron con hechicería mortal usada con
+            astucia. Pero, después de siglos de encarcelamiento, Aatrox fue el
+            primero en encontrar la libertad una vez más; corrompió y transformó
+            a los bastante tontos como para intentar blandir el arma mágica que
+            contenía su esencia. Ahora, con cuerpos robados, camina por
+            Runaterra con una apariencia retorcida de su forma original y busca
+            la venganza apocalíptica que tanto desea.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr
+      class="border-1 mx-auto w-[90%] border-custom-blue-1 border-opacity-50"
+    />
     <main
       id="championsGrid"
       class="m-auto flex max-w-7xl flex-col gap-x-4 gap-y-12 px-4 py-16 sm:grid sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
