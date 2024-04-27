@@ -1,5 +1,6 @@
-import { SPLASH_URL, PASSIVE_URL, ABILITY_URL } from "./utils.js";
+import { LOADING_URL, PASSIVE_URL, ABILITY_URL } from "./utils.js";
 import { transformImage } from "./transformImage.js";
+import { updateFavouriteChampion } from "./updateFavouriteChampion.js";
 
 const championsGrid = document.getElementById("championsGrid");
 
@@ -37,7 +38,7 @@ export function displayChampion(champion) {
   const E_PATH = champion.spells[2].image.full;
   const R_PATH = champion.spells[3].image.full;
   const ALL_PATHS = [
-    `${SPLASH_URL}${champion.id}_0.jpg`,
+    `${LOADING_URL}${champion.id}_0.jpg`,
     `${PASSIVE_URL}${PASSIVE_PATH}`,
     `${ABILITY_URL}${Q_PATH}`,
     `${ABILITY_URL}${W_PATH}`,
@@ -48,10 +49,10 @@ export function displayChampion(champion) {
   /**************/
   /* CLOUDINARY */
   /**************/
-  const SPLASH_TRANSFORMATIONS = "w_240,h_436,c_auto,f_webp";
+  const LOADING_TRANSFORMATIONS = "w_240,h_436,c_auto,f_webp";
   const ABILITY_TRANSFORMATIONS = "w_40,h_40,c_auto,f_webp";
   const IMAGE_URLS = [
-    transformImage(SPLASH_TRANSFORMATIONS, ALL_PATHS[0]),
+    transformImage(LOADING_TRANSFORMATIONS, ALL_PATHS[0]),
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[1]),
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[2]),
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[3]),
@@ -102,7 +103,7 @@ export function displayChampion(champion) {
           width="240"
           height="436"
           class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
-          alt="${champion.name} splash art"
+          alt="${champion.name} loading screen art"
           fetchpriority="high"
         />
       </div>
@@ -215,6 +216,6 @@ export function displayChampion(champion) {
       </div>
     </div>
     `;
-  div.addEventListener("click", () => {});
+  div.addEventListener("click", () => updateFavouriteChampion(champion));
   championsGrid.appendChild(div);
 }

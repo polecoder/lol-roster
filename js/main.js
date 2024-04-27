@@ -66,10 +66,6 @@ async function fetchAndDisplayChampions() {
   }
 }
 
-function updateFavouriteChampion(champion) {
-  document.getElementById;
-}
-
 let championsParaCargar = allChampions;
 const roleButtons = document.querySelectorAll(".role-btn");
 roleButtons.forEach((button) =>
