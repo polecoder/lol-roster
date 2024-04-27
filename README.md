@@ -1,4 +1,12 @@
+<div align=center>
+
 # Explorador de campeones de League of Legends
+
+[![Data Dragon][dd-badge]][dd-url]
+[![Cloudinary][cloudinary-badge]][cloudinary-url]
+[![Tailwind CSS][tailwind-badge]][tailwind-url]
+
+</div>
 
 Explora el vasto universo de los campeones de League of Legends (LoL) con nuestra aplicación web interactiva. Impulsado por la API Data Dragon de Riot, este proyecto proporciona información detallada sobre cada campeón de LoL, incluyendo sus roles, habilidades y mucho más. Construido como un viaje de aprendizaje a través de Tailwind CSS, esta aplicación muestra un diseño moderno y responsive que mejora la experiencia del usuario.
 
@@ -12,6 +20,7 @@ Explora el vasto universo de los campeones de League of Legends (LoL) con nuestr
 ## Tecnologías utilizadas
 
 - **API Data Dragon de Riot**: Obtiene información (parche 14.4.1) sobre todos los campeones de League of Legends.
+- **Cloudinary API**: Transforma todas las imagenes de este proyecto para optimizar el rendimiento de la página
 - **Tailwind CSS**: Un framework de CSS utilizado para diseñar la aplicación con un CSS personalizado mínimo.
 - **JavaScript vanilla**: Para gestionar las peticiones de la API, manipular el DOM e implementar funciones interactivas.
 
@@ -30,3 +39,10 @@ Por favor, también señala mejoras o cualquier error que encuentres. Utiliza la
 Distribuido bajo la Licencia MIT. Ver LICENSE para más información.
 
 Agradezco sinceramente tu tiempo y apoyo para hacer de esto un proyecto aún mejor. Saludos! 👋
+
+[dd-url]: https://developer.riotgames.com/docs/lol
+[cloudinary-url]: https://cloudinary.com/
+[tailwind-url]: https://tailwindcss.com/
+[dd-badge]: https://img.shields.io/badge/Data_Dragon-EB0029?style=for-the-badge&logo=riot-games
+[cloudinary-badge]: https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary
+[tailwind-badge]: https://img.shields.io/badge/Tailwind_CSS-FFF?style=for-the-badge&logo=tailwind-css&logoColor=06B6D4
