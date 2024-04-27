@@ -1,6 +1,7 @@
 import { CHAMPION_URL } from "./utils.js";
 import { CHAMPION_IDS } from "./championIDs.js";
 import { displayChampion } from "./displayChampion.js";
+import { updateFavouriteChampion } from "./updateFavouriteChampion.js";
 
 const CHAMPIONS_PER_PAGE = 12;
 
@@ -97,6 +98,12 @@ roleButtons.forEach((button) =>
     button.classList.add("role-active");
   }),
 );
+
+// Cambiar el campeón favorito, si existe
+const favouriteChampion = localStorage.getItem("favouriteChampion");
+if (favouriteChampion) {
+  updateFavouriteChampion(JSON.parse(favouriteChampion));
+}
 
 fetchAndDisplayChampions();
 document.getElementById("loadMore").addEventListener("click", () => {

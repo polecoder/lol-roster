@@ -45,4 +45,6 @@ export function updateFavouriteChampion(champion) {
   }
 
   document.getElementById("favouriteLore").textContent = champion.lore;
+
+  localStorage.setItem("favouriteChampion", JSON.stringify(champion));
 }
