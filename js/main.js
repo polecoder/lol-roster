@@ -38,7 +38,6 @@ async function fetchAndDisplayChampions() {
         allChampions.push(...results);
         localStorage.setItem("championsData", JSON.stringify(allChampions));
       }
-      console.log(allChampions);
 
       // Guardo los campeones en un array para cada rol, en este punto allChampions siempre está lleno, ya sea con localStorage o un fetch
       allAssassins = allChampions.filter(

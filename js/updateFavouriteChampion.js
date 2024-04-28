@@ -44,7 +44,19 @@ export function updateFavouriteChampion(champion) {
     difficultySlot3.classList.add("opacity-25");
   }
 
-  document.getElementById("favouriteLore").textContent = champion.lore;
+  if (champion.lore.length > 300) {
+    const loreTruncado = champion.lore.slice(0, 300) + "...";
+    document.getElementById("favouriteLore").innerHTML =
+      `${loreTruncado} <button type="button" class="pl-[4px] text-xs uppercase text-custom-gold-3" id="favouriteMoreLore">Saber más</button>`;
+
+    document
+      .getElementById("favouriteMoreLore")
+      .addEventListener("click", () => {
+        document.getElementById("favouriteLore").innerHTML = champion.lore;
+      });
+  } else {
+    document.getElementById("favouriteLore").innerHTML = champion.lore;
+  }
 
   localStorage.setItem("favouriteChampion", JSON.stringify(champion));
 }
