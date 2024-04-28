@@ -120,7 +120,9 @@
           >campeón</span
         >
       </h2>
-      <div class="mx-auto max-w-[750px] bg-custom-blue-1 text-white">
+      <div
+        class="mx-auto w-[300px] bg-custom-blue-1 text-white sm:w-[500px] lg:w-[750px]"
+      >
         <div class="relative mb-4">
           <div
             class="absolute right-[8px] top-[8px] z-10 bg-custom-blue-1 p-1 sm:right-[12px] sm:top-[12px]"
@@ -128,23 +130,27 @@
             <img src="./img/star.svg" alt="Favourite" class="sm:h-8 sm:w-8" />
           </div>
           <div class="splash-pattern relative">
+            <div
+              id="splashPlaceholder"
+              class="h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"
+            ></div>
             <img
-              src="https://res.cloudinary.com/dak46kbmg/image/fetch/w_750,h_442,c_auto,f_webp/https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
-              alt="Aatrox splash art"
               id="favouriteSplash"
+              class="hidden h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"
+              aria-hidden="true"
             />
           </div>
           <div
             class="absolute bottom-0 left-1/2 w-[300px] -translate-x-1/2 font-custom-title uppercase italic lg:bottom-[10px]"
           >
             <p class="text-xs sm:text-base lg:text-xl" id="favouriteTitle">
-              La Espada Darkin
+              Aquí verás tu Campeón
             </p>
             <h2
               class="text-2xl font-semibold sm:text-5xl lg:text-6xl"
               id="favouriteName"
             >
-              Aatrox
+              Favorito
             </h2>
           </div>
         </div>
@@ -154,14 +160,14 @@
           >
             <div class="w-1/2">
               <img
-                src="./img/fighter.webp"
-                alt="Fighter icon"
+                src="./img/autofill.webp"
+                alt="Autofill icon"
                 width="32"
                 height="32"
                 class="mx-auto mb-1 sm:h-10 sm:w-10"
                 id="favouriteRole"
               />
-              <p id="favouriteRoleText">Luchador</p>
+              <p id="favouriteRoleText">Rol</p>
             </div>
             <div class="w-1/2">
               <div class="mx-auto mb-1 flex h-8 w-16 gap-1 sm:h-10">
@@ -169,7 +175,7 @@
                   class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2"
                 ></div>
                 <div
-                  class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2"
+                  class="my-auto h-3 w-5 -skew-x-[40deg] bg-custom-blue-2 opacity-25"
                   id="favouriteDifficulty2"
                 ></div>
                 <div
@@ -182,25 +188,14 @@
           </div>
           <hr class="border-white border-opacity-25 lg:hidden" />
           <p
-            class="mt-4 text-start text-sm sm:px-4 lg:border-l-[1px] lg:border-white lg:border-opacity-25 lg:py-4 lg:pl-12"
+            class="sm: mt-4 text-start text-sm sm:px-4 lg:border-l-[1px] lg:border-white lg:border-opacity-25 lg:py-4 lg:pl-12"
             id="favouriteLore"
           >
-            Aatrox y sus hermanos, que alguna vez fueron respetados defensores
-            de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor
-            para Runaterra y los derrotaron con hechicería mortal usada con
-            astucia. Pero, después de siglos de encarcelamiento, Aatrox fue el
-            primero en encontrar la libertad una vez más; corrompió y transformó
-            a los bastante tontos como para intentar blandir el arma mágica que
-            contenía su esencia. Ahora, con cuerpos robados, camina por
-            Runaterra con una apariencia retorcida de su forma original y busca
-            la venganza apocalíptica que tanto desea.
-            <button
-              type="button"
-              class="pl-[4px] text-xs uppercase text-custom-gold-3"
-              id="favouriteMoreLore"
-            >
-              Saber más
-            </button>
+            Para seleccionar tu campeón favorito simplemente debes hacer click
+            en la imagen del mismo, tu elección será recordada y podrás ver tu
+            campeón favorito siempre que visites esta página. Cuando ya tengas
+            un campeón preferido, en esta sección podrás informarte sobre la
+            historia de tu personaje.
           </p>
         </div>
       </div>

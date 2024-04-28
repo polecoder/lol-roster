@@ -2,6 +2,9 @@ import { transformImage } from "./transformImage.js";
 import { SPLASH_URL } from "./utils.js";
 
 export function updateFavouriteChampion(champion) {
+  document.getElementById("splashPlaceholder").classList.add("hidden");
+  document.getElementById("splashPlaceholder").ariaHidden = true;
+  document.getElementById("favouriteSplash").classList.remove("hidden");
   const SPLASH_TRANSFORMATIONS = "w_750,h_442,c_auto,f_webp";
   document.getElementById("favouriteSplash").src = transformImage(
     SPLASH_TRANSFORMATIONS,
