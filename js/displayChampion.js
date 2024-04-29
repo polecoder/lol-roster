@@ -98,14 +98,27 @@ export function displayChampion(champion) {
           class="absolute left-[100px] top-[198px] animate-spin"
           alt="Loading svg"
         />
-        <img
-          src="${IMAGE_URLS[0]}"
-          width="240"
-          height="436"
-          class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
-          alt="${champion.name} loading screen art"
-          fetchpriority="high"
-        />
+        <div class="relative">
+          <div
+            class="absolute left-0 top-0 z-10 h-full w-full bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60"
+          >
+            <img
+              src="./img/star.svg"
+              width="64"
+              height="64"
+              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              alt="Favourite star"
+            />
+          </div>
+          <img
+            src="${IMAGE_URLS[0]}"
+            width="240"
+            height="436"
+            class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
+            alt="${champion.name} loading screen art"
+            fetchpriority="high"
+          />
+        </div>
       </div>
       <div class="absolute bottom-0 z-10 h-20 w-60 bg-black bg-opacity-50"></div>
       <div class="text-custom-gold-1">
