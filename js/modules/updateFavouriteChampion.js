@@ -1,6 +1,13 @@
 import { transformImage } from "./transformImage.js";
 import { SPLASH_URL } from "./utils.js";
+import { updateNotification } from "./updateNotification.js";
 
+/**
+ * Updates the user's favourite champion when clicking on a champion's card
+ *
+ * @param {Object} champion A champion object exactly the same as when returned from the Data Dragon API
+ * @returns {void}
+ */
 export function updateFavouriteChampion(champion) {
   document.getElementById("splashPlaceholder").classList.add("hidden");
   document.getElementById("splashPlaceholder").ariaHidden = true;
@@ -158,4 +165,6 @@ export function updateFavouriteChampion(champion) {
     .getElementById("favouriteChampionSection")
     .scrollIntoView({ behavior: "smooth" });
   localStorage.setItem("favouriteChampion", JSON.stringify(champion));
+
+  updateNotification(champion);
 }

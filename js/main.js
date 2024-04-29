@@ -1,7 +1,7 @@
-import { CHAMPION_URL } from "./utils.js";
-import { CHAMPION_IDS } from "./championIDs.js";
-import { displayChampion } from "./displayChampion.js";
-import { updateFavouriteChampion } from "./updateFavouriteChampion.js";
+import { CHAMPION_URL } from "./modules/utils.js";
+import { CHAMPION_IDS } from "./modules/championIDs.js";
+import { displayChampion } from "./modules/displayChampion.js";
+import { updateFavouriteChampion } from "./modules/updateFavouriteChampion.js";
 
 const CHAMPIONS_PER_PAGE = 12;
 
