@@ -129,11 +129,15 @@
               id="splashPlaceholder"
               class="h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"
             ></div>
-            <img
-              id="favouriteSplash"
-              class="hidden h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"
-              aria-hidden="true"
-            />
+            <picture>
+              <source media="(max-width: 640px)" id="favouriteSplash1" />
+              <source media="(max-width: 1024px)" id="favouriteSplash2" />
+              <img
+                id="favouriteSplash3"
+                class="hidden h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"
+                aria-hidden="true"
+              />
+            </picture>
           </div>
           <div
             class="absolute bottom-0 left-1/2 w-[300px] -translate-x-1/2 font-custom-title uppercase italic lg:bottom-[10px]"

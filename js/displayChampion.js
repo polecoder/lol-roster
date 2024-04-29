@@ -104,6 +104,8 @@ export function displayChampion(champion) {
         >
           <img
             src="./img/star.svg"
+            width="24"
+            height="24"
             class="opacity-25 transition-opacity duration-300 group-focus:opacity-100"
             alt="Favourite button"
           />

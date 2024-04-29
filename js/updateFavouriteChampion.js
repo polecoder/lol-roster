@@ -4,13 +4,26 @@ import { SPLASH_URL } from "./utils.js";
 export function updateFavouriteChampion(champion) {
   document.getElementById("splashPlaceholder").classList.add("hidden");
   document.getElementById("splashPlaceholder").ariaHidden = true;
-  document.getElementById("favouriteSplash").classList.remove("hidden");
-  const SPLASH_TRANSFORMATIONS = "w_750,h_442,c_auto,f_webp";
-  document.getElementById("favouriteSplash").src = transformImage(
-    SPLASH_TRANSFORMATIONS,
+
+  const SPLASH1_TRANSFORMATIONS = "w_300,h_177,c_auto,f_webp";
+  document.getElementById("favouriteSplash1").srcset = transformImage(
+    SPLASH1_TRANSFORMATIONS,
     `${SPLASH_URL}${champion.id}_0.jpg`,
   );
-  document.getElementById("favouriteSplash").alt =
+
+  const SPLASH2_TRANSFORMATIONS = "w_500,h_295,c_auto,f_webp";
+  document.getElementById("favouriteSplash2").srcset = transformImage(
+    SPLASH2_TRANSFORMATIONS,
+    `${SPLASH_URL}${champion.id}_0.jpg`,
+  );
+
+  document.getElementById("favouriteSplash3").classList.remove("hidden");
+  const SPLASH3_TRANSFORMATIONS = "w_750,h_442,c_auto,f_webp";
+  document.getElementById("favouriteSplash3").src = transformImage(
+    SPLASH3_TRANSFORMATIONS,
+    `${SPLASH_URL}${champion.id}_0.jpg`,
+  );
+  document.getElementById("favouriteSplash3").alt =
     `${champion.name} splash art`;
 
   document.getElementById("favouriteTitle").textContent = champion.title;
