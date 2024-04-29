@@ -849,6 +849,10 @@ video {
   overflow-x: hidden;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .border-custom-blue-1 {
   --tw-border-opacity: 1;
   border-color: rgb(6 28 37 / var(--tw-border-opacity));

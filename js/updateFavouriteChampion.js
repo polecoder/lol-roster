@@ -61,5 +61,8 @@ export function updateFavouriteChampion(champion) {
     document.getElementById("favouriteLore").innerHTML = champion.lore;
   }
 
+  document
+    .getElementById("favouriteChampionSection")
+    .scrollIntoView({ behavior: "smooth" });
   localStorage.setItem("favouriteChampion", JSON.stringify(champion));
 }
