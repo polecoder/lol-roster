@@ -1357,6 +1357,10 @@ video {
   opacity: 1;
 }
 
+.group:focus .group-focus\:opacity-100 {
+  opacity: 1;
+}
+
 @media (min-width: 640px) {
   .sm\:right-\[12px\] {
     right: 12px;
@@ -1394,6 +1398,10 @@ video {
     height: 295px;
   }
 
+  .sm\:h-\[32px\] {
+    height: 32px;
+  }
+
   .sm\:min-h-full {
     min-height: 100%;
   }
@@ -1416,6 +1424,10 @@ video {
 
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:w-\[32px\] {
+    width: 32px;
   }
 
   .sm\:grid-cols-2 {
@@ -1470,6 +1482,10 @@ video {
   .lg\:my-auto {
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  .lg\:block {
+    display: block;
   }
 
   .lg\:grid {

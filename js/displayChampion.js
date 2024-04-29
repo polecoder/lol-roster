@@ -98,9 +98,19 @@ export function displayChampion(champion) {
           class="absolute left-[100px] top-[198px] animate-spin"
           alt="Loading svg"
         />
+        <button
+          type="button"
+          class="group absolute right-[8px] top-[8px] z-20 bg-custom-blue-1 p-1 lg:hidden"
+        >
+          <img
+            src="./img/star.svg"
+            class="opacity-25 transition-opacity duration-300 group-focus:opacity-100"
+            alt="Favourite button"
+          />
+        </button>
         <div class="relative">
           <div
-            class="absolute left-0 top-0 z-10 h-full w-full bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60"
+            class="absolute left-0 top-0 z-10 hidden h-full w-full bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 lg:block"
           >
             <img
               src="./img/star.svg"
