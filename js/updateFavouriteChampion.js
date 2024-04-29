@@ -5,17 +5,45 @@ export function updateFavouriteChampion(champion) {
   document.getElementById("splashPlaceholder").classList.add("hidden");
   document.getElementById("splashPlaceholder").ariaHidden = true;
 
-  const SPLASH1_TRANSFORMATIONS = "w_300,h_177,c_auto,f_webp";
-  document.getElementById("favouriteSplash1").srcset = transformImage(
-    SPLASH1_TRANSFORMATIONS,
-    `${SPLASH_URL}${champion.id}_0.jpg`,
-  );
+  const SPLASH1_TRANSFORMATIONS_1x = "w_300,h_177,c_auto,f_webp";
+  const SPLASH1_TRANSFORMATIONS_2x = "w_600,h_354,c_auto,f_webp";
+  const SPLASH1_TRANSFORMATIONS_3x = "w_900,h_531,c_auto,f_webp";
+  document.getElementById("favouriteSplash1").srcset =
+    transformImage(
+      SPLASH1_TRANSFORMATIONS_1x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 1x, " +
+    transformImage(
+      SPLASH1_TRANSFORMATIONS_2x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 2x, " +
+    transformImage(
+      SPLASH1_TRANSFORMATIONS_3x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 3x";
 
-  const SPLASH2_TRANSFORMATIONS = "w_500,h_295,c_auto,f_webp";
-  document.getElementById("favouriteSplash2").srcset = transformImage(
-    SPLASH2_TRANSFORMATIONS,
-    `${SPLASH_URL}${champion.id}_0.jpg`,
-  );
+  const SPLASH2_TRANSFORMATIONS_1x = "w_500,h_295,c_auto,f_webp";
+  const SPLASH2_TRANSFORMATIONS_2x = "w_1000,h_590,c_auto,f_webp";
+  const SPLASH2_TRANSFORMATIONS_3x = "w_1500,h_885,c_auto,f_webp";
+  document.getElementById("favouriteSplash2").srcset =
+    transformImage(
+      SPLASH2_TRANSFORMATIONS_1x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 1x, " +
+    transformImage(
+      SPLASH2_TRANSFORMATIONS_2x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 2x, " +
+    transformImage(
+      SPLASH2_TRANSFORMATIONS_3x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 3x";
 
   document.getElementById("favouriteSplash3").classList.remove("hidden");
   const SPLASH3_TRANSFORMATIONS = "w_750,h_442,c_auto,f_webp";

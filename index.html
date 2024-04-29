@@ -130,8 +130,16 @@
               class="h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"
             ></div>
             <picture>
-              <source media="(max-width: 640px)" id="favouriteSplash1" />
-              <source media="(max-width: 1024px)" id="favouriteSplash2" />
+              <source
+                media="(max-width: 640px)"
+                id="favouriteSplash1"
+                sizes="(max-width: 640px) 300px"
+              />
+              <source
+                media="(max-width: 1024px)"
+                id="favouriteSplash2"
+                sizes="(max-width: 1024px) 500px"
+              />
               <img
                 id="favouriteSplash3"
                 class="hidden h-[177px] w-[300px] sm:h-[295px] sm:w-[500px] lg:h-[442px] lg:w-[750px]"

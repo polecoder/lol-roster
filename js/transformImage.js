@@ -1,6 +1,6 @@
 /**
  * Transforms an image using Cloudinary's image transformation API
- * 
+ *
  * @param {string} cloudinaryParameters The Cloudinary parameters to apply to the image
  * @param {string} imageURL The URL of the image to transform
  * @returns {string} The cloudinary URL for the transformed image
