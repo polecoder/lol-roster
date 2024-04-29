@@ -49,15 +49,23 @@ export function displayChampion(champion) {
   /**************/
   /* CLOUDINARY */
   /**************/
-  const LOADING_TRANSFORMATIONS_1x = "w_240,h_436,c_auto,f_webp";
-  const LOADING_TRANSFORMATIONS_2x = "w_480,h_872,c_auto,f_webp";
-  const LOADING_TRANSFORMATIONS_3x = "w_720,h_1308,c_auto,f_webp";
+  const LOADING_WEBP_TRANSFORMATIONS_1x = "w_240,h_436,c_auto,f_webp";
+  const LOADING_WEBP_TRANSFORMATIONS_2x = "w_480,h_872,c_auto,f_webp";
+  const LOADING_WEBP_TRANSFORMATIONS_3x = "w_720,h_1308,c_auto,f_webp";
+  const LOADING_AVIF_TRANSFORMATIONS_1x = "w_240,h_436,c_auto,f_avif";
+  const LOADING_AVIF_TRANSFORMATIONS_2x = "w_480,h_872,c_auto,f_avif";
+  const LOADING_AVIF_TRANSFORMATIONS_3x = "w_720,h_1308,c_auto,f_avif";
   const ABILITY_TRANSFORMATIONS = "w_40,h_40,c_auto,f_webp";
   const IMAGE_URLS = [
     [
-      transformImage(LOADING_TRANSFORMATIONS_1x, ALL_PATHS[0]) + " 1x, ",
-      transformImage(LOADING_TRANSFORMATIONS_2x, ALL_PATHS[0]) + " 2x, ",
-      transformImage(LOADING_TRANSFORMATIONS_3x, ALL_PATHS[0]) + " 3x",
+      transformImage(LOADING_AVIF_TRANSFORMATIONS_1x, ALL_PATHS[0]) + " 1x, ",
+      transformImage(LOADING_AVIF_TRANSFORMATIONS_2x, ALL_PATHS[0]) + " 2x, ",
+      transformImage(LOADING_AVIF_TRANSFORMATIONS_3x, ALL_PATHS[0]) + " 3x",
+    ],
+    [
+      transformImage(LOADING_WEBP_TRANSFORMATIONS_1x, ALL_PATHS[0]) + " 1x, ",
+      transformImage(LOADING_WEBP_TRANSFORMATIONS_2x, ALL_PATHS[0]) + " 2x, ",
+      transformImage(LOADING_WEBP_TRANSFORMATIONS_3x, ALL_PATHS[0]) + " 3x",
     ],
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[1]),
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[2]),
@@ -130,8 +138,9 @@ export function displayChampion(champion) {
           </div>
           <picture>
             <source srcset="${IMAGE_URLS[0][0] + IMAGE_URLS[0][1] + IMAGE_URLS[0][2]}" sizes="240px">
+            <source srcset="${IMAGE_URLS[1][0] + IMAGE_URLS[1][1] + IMAGE_URLS[1][2]}" sizes="240px">
             <img
-              src="${IMAGE_URLS[0][0]}"
+              src="${IMAGE_URLS[1][0]}"
               width="240"
               height="436"
               class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
@@ -161,7 +170,7 @@ export function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['P'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${IMAGE_URLS[1]}"
+            src="${IMAGE_URLS[2]}"
             loading="lazy"
             width="40"
             height="40"
@@ -174,7 +183,7 @@ export function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['Q'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${IMAGE_URLS[2]}"
+            src="${IMAGE_URLS[3]}"
             loading="lazy"
             width="40"
             height="40"
@@ -187,7 +196,7 @@ export function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['W'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${IMAGE_URLS[3]}"
+            src="${IMAGE_URLS[4]}"
             loading="lazy"
             width="40"
             height="40"
@@ -200,7 +209,7 @@ export function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['E'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${IMAGE_URLS[4]}"
+            src="${IMAGE_URLS[5]}"
             loading="lazy"
             width="40"
             height="40"
@@ -213,7 +222,7 @@ export function displayChampion(champion) {
           class="group relative transition-all duration-300 before:absolute before:left-0 before:h-full before:w-full before:leading-[36px] before:opacity-15 before:transition-all before:duration-300 before:content-['R'] after:absolute after:left-0 after:top-0 after:h-[36px] after:w-[36px] after:scale-[112%] after:border-[1px] after:border-white hover:-translate-y-1 before:hover:opacity-100"
         >
           <img
-            src="${IMAGE_URLS[5]}"
+            src="${IMAGE_URLS[6]}"
             loading="lazy"
             width="40"
             height="40"
