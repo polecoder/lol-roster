@@ -49,10 +49,16 @@ export function displayChampion(champion) {
   /**************/
   /* CLOUDINARY */
   /**************/
-  const LOADING_TRANSFORMATIONS = "w_240,h_436,c_auto,f_webp";
+  const LOADING_TRANSFORMATIONS_1x = "w_240,h_436,c_auto,f_webp";
+  const LOADING_TRANSFORMATIONS_2x = "w_480,h_872,c_auto,f_webp";
+  const LOADING_TRANSFORMATIONS_3x = "w_720,h_1308,c_auto,f_webp";
   const ABILITY_TRANSFORMATIONS = "w_40,h_40,c_auto,f_webp";
   const IMAGE_URLS = [
-    transformImage(LOADING_TRANSFORMATIONS, ALL_PATHS[0]),
+    [
+      transformImage(LOADING_TRANSFORMATIONS_1x, ALL_PATHS[0]) + " 1x, ",
+      transformImage(LOADING_TRANSFORMATIONS_2x, ALL_PATHS[0]) + " 2x, ",
+      transformImage(LOADING_TRANSFORMATIONS_3x, ALL_PATHS[0]) + " 3x",
+    ],
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[1]),
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[2]),
     transformImage(ABILITY_TRANSFORMATIONS, ALL_PATHS[3]),
@@ -122,14 +128,17 @@ export function displayChampion(champion) {
               alt="Favourite star"
             />
           </div>
-          <img
-            src="${IMAGE_URLS[0]}"
-            width="240"
-            height="436"
-            class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
-            alt="${champion.name} loading screen art"
-            fetchpriority="high"
-          />
+          <picture>
+            <source srcset="${IMAGE_URLS[0][0] + IMAGE_URLS[0][1] + IMAGE_URLS[0][2]}" sizes="240px">
+            <img
+              src="${IMAGE_URLS[0][0]}"
+              width="240"
+              height="436"
+              class="-z-10 scale-105 transition-all duration-300 group-hover:scale-[115%]"
+              alt="${champion.name} loading screen art"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
       <div class="absolute bottom-0 z-10 h-20 w-60 bg-black bg-opacity-50"></div>
