@@ -5,53 +5,105 @@ export function updateFavouriteChampion(champion) {
   document.getElementById("splashPlaceholder").classList.add("hidden");
   document.getElementById("splashPlaceholder").ariaHidden = true;
 
-  const SPLASH1_TRANSFORMATIONS_1x = "w_300,h_177,c_auto,f_webp";
-  const SPLASH1_TRANSFORMATIONS_2x = "w_600,h_354,c_auto,f_webp";
-  const SPLASH1_TRANSFORMATIONS_3x = "w_900,h_531,c_auto,f_webp";
-  document.getElementById("favouriteSplash1").srcset =
+  // SPLASH 1 - AVIF IMAGES
+  const SPLASH1_AVIF_TRANSFORMATIONS_1x = "w_300,h_177,c_auto,f_avif";
+  const SPLASH1_AVIF_TRANSFORMATIONS_2x = "w_600,h_354,c_auto,f_avif";
+  const SPLASH1_AVIF_TRANSFORMATIONS_3x = "w_900,h_531,c_auto,f_avif";
+  document.getElementById("avifFavouriteSplash1").srcset =
     transformImage(
-      SPLASH1_TRANSFORMATIONS_1x,
+      SPLASH1_AVIF_TRANSFORMATIONS_1x,
       `${SPLASH_URL}${champion.id}_0.jpg`,
     ) +
     " 1x, " +
     transformImage(
-      SPLASH1_TRANSFORMATIONS_2x,
+      SPLASH1_AVIF_TRANSFORMATIONS_2x,
       `${SPLASH_URL}${champion.id}_0.jpg`,
     ) +
     " 2x, " +
     transformImage(
-      SPLASH1_TRANSFORMATIONS_3x,
+      SPLASH1_AVIF_TRANSFORMATIONS_3x,
       `${SPLASH_URL}${champion.id}_0.jpg`,
     ) +
     " 3x";
 
-  const SPLASH2_TRANSFORMATIONS_1x = "w_500,h_295,c_auto,f_webp";
-  const SPLASH2_TRANSFORMATIONS_2x = "w_1000,h_590,c_auto,f_webp";
-  const SPLASH2_TRANSFORMATIONS_3x = "w_1500,h_885,c_auto,f_webp";
-  document.getElementById("favouriteSplash2").srcset =
+  // SPLASH 1 - WEBP IMAGES
+  const SPLASH1_WEBP_TRANSFORMATIONS_1x = "w_300,h_177,c_auto,f_webp";
+  const SPLASH1_WEBP_TRANSFORMATIONS_2x = "w_600,h_354,c_auto,f_webp";
+  const SPLASH1_WEBP_TRANSFORMATIONS_3x = "w_900,h_531,c_auto,f_webp";
+  document.getElementById("webpFavouriteSplash1").srcset =
     transformImage(
-      SPLASH2_TRANSFORMATIONS_1x,
+      SPLASH1_WEBP_TRANSFORMATIONS_1x,
       `${SPLASH_URL}${champion.id}_0.jpg`,
     ) +
     " 1x, " +
     transformImage(
-      SPLASH2_TRANSFORMATIONS_2x,
+      SPLASH1_WEBP_TRANSFORMATIONS_2x,
       `${SPLASH_URL}${champion.id}_0.jpg`,
     ) +
     " 2x, " +
     transformImage(
-      SPLASH2_TRANSFORMATIONS_3x,
+      SPLASH1_WEBP_TRANSFORMATIONS_3x,
       `${SPLASH_URL}${champion.id}_0.jpg`,
     ) +
     " 3x";
 
-  document.getElementById("favouriteSplash3").classList.remove("hidden");
-  const SPLASH3_TRANSFORMATIONS = "w_750,h_442,c_auto,f_webp";
-  document.getElementById("favouriteSplash3").src = transformImage(
-    SPLASH3_TRANSFORMATIONS,
+  // SPLASH 2 - AVIF IMAGES
+  const SPLASH2_AVIF_TRANSFORMATIONS_1x = "w_500,h_295,c_auto,f_avif";
+  const SPLASH2_AVIF_TRANSFORMATIONS_2x = "w_1000,h_590,c_auto,f_avif";
+  const SPLASH2_AVIF_TRANSFORMATIONS_3x = "w_1500,h_885,c_auto,f_avif";
+  document.getElementById("avifFavouriteSplash2").srcset =
+    transformImage(
+      SPLASH2_AVIF_TRANSFORMATIONS_1x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 1x, " +
+    transformImage(
+      SPLASH2_AVIF_TRANSFORMATIONS_2x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 2x, " +
+    transformImage(
+      SPLASH2_AVIF_TRANSFORMATIONS_3x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 3x";
+
+  // SPLASH 2 - WEBP IMAGES
+  const SPLASH2_WEBP_TRANSFORMATIONS_1x = "w_500,h_295,c_auto,f_webp";
+  const SPLASH2_WEBP_TRANSFORMATIONS_2x = "w_1000,h_590,c_auto,f_webp";
+  const SPLASH2_WEBP_TRANSFORMATIONS_3x = "w_1500,h_885,c_auto,f_webp";
+  document.getElementById("webpFavouriteSplash2").srcset =
+    transformImage(
+      SPLASH2_WEBP_TRANSFORMATIONS_1x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 1x, " +
+    transformImage(
+      SPLASH2_WEBP_TRANSFORMATIONS_2x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 2x, " +
+    transformImage(
+      SPLASH2_WEBP_TRANSFORMATIONS_3x,
+      `${SPLASH_URL}${champion.id}_0.jpg`,
+    ) +
+    " 3x";
+
+  // SPLASH 3 - AVIF IMAGES
+  const SPLASH3_AVIF_TRANSFORMATIONS = "w_750,h_442,c_auto,f_avif";
+  document.getElementById("webpFavouriteSplash3").src = transformImage(
+    SPLASH3_AVIF_TRANSFORMATIONS,
     `${SPLASH_URL}${champion.id}_0.jpg`,
   );
-  document.getElementById("favouriteSplash3").alt =
+
+  // SPLASH 3 - WEBP IMAGES
+  document.getElementById("webpFavouriteSplash3").classList.remove("hidden");
+  const SPLASH3_WEBP_TRANSFORMATIONS = "w_750,h_442,c_auto,f_webp";
+  document.getElementById("webpFavouriteSplash3").src = transformImage(
+    SPLASH3_WEBP_TRANSFORMATIONS,
+    `${SPLASH_URL}${champion.id}_0.jpg`,
+  );
+  document.getElementById("webpFavouriteSplash3").alt =
     `${champion.name} splash art`;
 
   document.getElementById("favouriteTitle").textContent = champion.title;
